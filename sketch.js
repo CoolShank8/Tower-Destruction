@@ -33,14 +33,14 @@ function setup() {
   console.log(TriangleImage)
   Polygon = new ImageSprite(200,200,20,20, TriangleImage)
 
-  Ground1 = new Ground(420,600,250,10)
+  Ground1 = new Ground(420,600,200,10)
   Ground2 = new Ground(650, 400,300,10)
   Ground3 = new Ground(640, 520, 200,10)
   Ground4 = new Ground(1110, 520, 400, 10)
 
   BaeeGround = new Ground(width/2, 700, width, 20)
 
-  MakePyramid(360,580,5,2)
+  MakePyramid(350,580,5, 2)
   MakePyramid(560,380,7,2)
   MakePyramid(610,500, 3,2)
   MakePyramid(965, 480, 11, 2)
@@ -105,7 +105,7 @@ function MakePyramid(StartingX, StartingY, AmountOfBlocksStarting,BlocksToSubtra
 
   for (var i = 0; i < AmountOfRows; i ++)
   {
-    MakeRow(StartingX + (i * BlockWidth), BlocksToMake, StartingY - (i * BlockHeight), BlockWidth, BlockHeight)
+    MakeRow(StartingX + ((BlocksToSubtractEachRow/2) * i * BlockWidth), BlocksToMake, StartingY - (i * BlockHeight), BlockWidth, BlockHeight)
     BlocksToMake = BlocksToMake - BlocksToSubtractEachRow
   }
 }
